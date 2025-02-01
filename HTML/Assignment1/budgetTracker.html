@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Track your monthly budget, expenses, and income effortlessly with our Personal Budget Tracker."
+    />
+    <meta name="author" content="Kavita" />
+    <title>Personal Budget Tracker</title>
+  </head>
+
+  <body>
+    <center>
+      <!-- Navigation -->
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#add-expense">Add Expense</a>
+        <a href="#view-budget">View Budget</a>
+      </nav>
+
+      <!-- Header Section -->
+      <header id="home">
+        <h1>Personal Budget Tracker</h1>
+      </header>
+
+      <!-- Introduction Section -->
+      <section>
+        <h2>Welcome to the Personal Budget Tracker</h2>
+        <p>
+          This tracker helps you manage your monthly income and expenses.<br />
+          You can add your income and expenses, categorize them, and view a
+          summary of your budget.
+        </p>
+      </section>
+
+      <section>
+        <h2>Search for a Transaction:</h2>
+        <input
+          type="text"
+          placeholder="Search by Category or Description"
+          id="searchInput"
+        />
+        <br /><br />
+      </section>
+
+      <section id="add-expense">
+        <form action="#" method="POST">
+          <fieldset>
+            <legend>Add Income/Expense Details</legend>
+            <label for="income">Income</label>
+            <input type="number" id="income" placeholder="Income" required />
+            <br /><br />
+            <label for="expense">Expense</label>
+            <input type="number" id="expense" placeholder="Expenses" required />
+            <br /><br />
+            <label for="category">Category</label>
+            <select name="category" id="category">
+              <option value="select">Select</option>
+              <option value="food">Food</option>
+              <option value="transportation">Transportation</option>
+              <option value="shopping">Shopping</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="movie">Movie</option>
+              <option value="trip">Trips</option>
+              <option value="other">Others</option>
+            </select>
+            <br /><br />
+            <label for="date">Date</label>
+            <input type="date" id="date" required />
+            <br /><br />
+            <label for="receipt">Upload Receipt</label>
+            <input type="file" id="receipt" name="receipt" />
+            <br /><br />
+            <button type="submit">Submit</button>
+          </fieldset>
+        </form>
+      </section>
+
+      <br /><br />
+
+      <section id="view-budget">
+        <table border="6">
+          <h1>Budget Summary</h1>
+          <caption>
+            <h2>Table show:Expense Detail</h2>
+          </caption>
+          <thead>
+            <tr>
+              <th rowspan="2">Category</th>
+              <th colspan="2">Transaction Details</th>
+              <th>Type</th>
+              <th rowspan="2">Status</th>
+              <th rowspan="2" colspan="2">Action</th>
+            </tr>
+            <tr>
+              <th>Amount</th>
+              <th>Description</th>
+              <th>Income/Expense</th>
+            </tr>
+            <tr>
+              <td>Food</td>
+              <td>$500</td>
+              <td>Groceries and Meals</td>
+              <td rowspan="6">Expense</td>
+              <td>Completed</td>
+              <td><a href="#">Edit</a></td>
+              <td><a href="#">Delete</a></td>
+            </tr>
+            <tr>
+              <td>Transportation</td>
+              <td>$200</td>
+              <td>Travel-related Expenses</td>
+              <td>Completed</td>
+              <td><a href="#">Edit</a></td>
+              <td><a href="#">Delete</a></td>
+            </tr>
+            <tr>
+              <td>Shopping</td>
+              <td>$390</td>
+              <td>Purchases online clothes</td>
+              <td>Pending</td>
+              <td><a href="#">Edit</a></td>
+              <td><a href="#">Delete</a></td>
+            </tr>
+            <tr>
+              <td>Entertainment</td>
+              <td>$299</td>
+              <td>Leisure activities</td>
+              <td>Completed</td>
+              <td><a href="#">Edit</a></td>
+              <td><a href="#">Delete</a></td>
+            </tr>
+            <tr>
+              <td>Movie</td>
+              <td>$190</td>
+              <td>Cinema-related expenses</td>
+              <td>Failed</td>
+              <td><a href="#">Edit</a></td>
+              <td><a href="#">Delete</a></td>
+            </tr>
+            <tr>
+              <td>Trips</td>
+              <td>$320</td>
+              <td>Travel and vacations</td>
+              <td>Completed</td>
+              <td><a href="#">Edit</a></td>
+              <td><a href="#">Delete</a></td>
+            </tr>
+            <tr>
+              <td>Salary</td>
+              <td>$5000</td>
+              <td>Salary</td>
+              <td>Income</td>
+              <td>Completed</td>
+              <td><a href="#">Edit</a></td>
+              <td><a href="#">Delete</a></td>
+            </tr>
+            <tr>
+              <td>Others</td>
+              <td>$100</td>
+              <td>Other uncategorized expenses</td>
+              <td>Expense</td>
+              <td>Pending</td>
+              <td><a href="#">Edit</a></td>
+              <td><a href="#">Delete</a></td>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <td colspan="2">Total</td>
+              <td>$7999</td>
+              <td colspan="4"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <br /><br />
+
+      <h2>Google Map to show near by Bank ATMs...</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345094374!2d144.95592631531677!3d-37.81720997975195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577b7f7dbf4fce4!2sMelbourne%20Central!5e0!3m2!1sen!2sau!4v1611138180205!5m2!1sen!2sau"
+        width="50%"
+        height="400"
+      ></iframe>
+
+      <footer>
+        <p>Version 1.0 - Personal Budget Tracker</p>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+        </ul>
+        <p>
+          Contact us at:
+          <a href="mailto:support@budgettracker.com"
+            >support@budgettracker.com</a
+          >
+        </p>
+        <p>&copy; 2025 Kavita. All rights reserved.</p>
+      </footer>
+    </center>
+  </body>
+</html>
