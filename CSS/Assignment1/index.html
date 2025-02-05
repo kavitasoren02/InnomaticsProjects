@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="Images/favico.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="author" content="Kavita" />
+    <title>Caffeine Dreams</title>
+  </head>
+  <body>
+    <header>
+      <!-- NavBar Section -->
+      <nav class="nav-bar">
+        <h1><span>C</span>affeine <span>D</span>reams</h1>
+        <div>
+          <a href="#home">Dashboard</a>
+          <a href="#menu">Menu</a>
+          <a href="#about">About Us</a>
+          <a href="#contact">Contact</a>
+          <input type="search" placeholder="Search" />
+        </div>
+      </nav>
+    </header>
+
+    <section>
+      <div id="home" class="dashboard">
+        <h2 class="welcome">Welcome to Caffeine Dreams!</h2>
+        <p class="para">
+          your go-to coffee haven! Sip on expertly brewed coffees, savor
+          delicious treats, and enjoy a cozy ambiance perfect for every coffee
+          lover. ☕
+        </p>
+        <button id="btn" type="button">
+          <a href="#breakfast-menu">View Menu</a>
+        </button>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+      <div class="vmenu">
+        <h1>Our Menu</h1>
+        <div class="card-list">
+          <div class="card">
+            <div class="card1"></div>
+            <div class="desc">
+              <h3>ColdCoffee</h3>
+              <p>
+                Cold coffee is a chilled, creamy coffee beverage, often blended
+                with ice.
+              </p>
+              <h2>$4.89</h2>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card2"></div>
+            <div class="desc">
+              <h3>Cappuccino</h3>
+              <p>
+                Cappuccino is a coffee-based drink made with espresso.
+              </p>
+              <h2>$3.00</h2>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card3"></div>
+            <div class="desc">
+              <h3>Black Coffee</h3>
+              <p>
+                Black coffee is made from brewed coffee beans without milk.
+              </p>
+              <h2>$2.90</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breakfast Section -->
+    <section id="breakfast-menu">
+      <div class="vmenu">
+        <h1>Breakfast Menu</h1>
+        <div class="card-list">
+          <div class="card">
+            <div class="card4"></div>
+            <div class="desc">
+              <h3>IceCream Coffee</h3>
+              <p>
+                Ice Cream Coffee is a delicious fusion of rich brewed coffee.
+              </p>
+              <h2>$4.89</h2>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card5"></div>
+            <div class="desc">
+              <h3>ColdCoffee</h3>
+              <p>
+                Cold coffee is a chilled, creamy coffee beverage.
+              </p>
+              <h2>$3.99</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--   About Section -->
+    <section id="about">
+      <div class="aboutus">
+        <h1>About Us</h1>
+        <div class="main-container">
+          <div class="left">
+            <p>
+              We are a passionate coffee shop that serves the finest brewed
+              beverages, from rich espressos to deliciously creamy cappuccinos.
+              Our mission is to bring people together through the love of coffee
+              and create a warm and welcoming space for all. Whether you're
+              looking for a quick caffeine fix or a place to relax with friends,
+              we have something for everyone.
+              <br />
+              We’re not just about coffee; we are about community. Our café is a
+              place where people can gather, share ideas, and enjoy their time.
+              Whether you're here to work, meet friends, or just take a moment
+              for yourself, we strive to make every visit special.
+            </p>
+          </div>
+          <div class="right"></div>
+        </div>
+      </div>
+    </section>
+
+    <!--Contact Section-->
+    <section id="contact">
+      <div class="contact-menu">
+        <h1>Contact Us</h1>
+        <form action="submit">
+          <input type="text" id="name"name="name"placeholder="Enter your name..." required>
+          <br>
+          <input type="email" id="email"name="email"placeholder="Enter your email..." required>
+          <br>
+          <textarea id="message"type="text"placeholder="Enter your message here...." required></textarea>
+          <br>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <!--Footer Section-->
+    <div class="footer">
+      <p>&copy; <span id="year">2025</span>Caffeine Dreams. All Rights Reserved.</p>
+    </div>
+  </body>
+</html>
