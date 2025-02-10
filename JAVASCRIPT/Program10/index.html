@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Flight Ticket Booking System</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Flight Ticket Fare Calculator</h2>
+
+    <label for="classType">Select Class Type:</label>
+    <select id="classType">
+      <option value="economy">Economy</option>
+      <option value="business">Business (+$200)</option>
+      <option value="first">First Class (+$500)</option>
+    </select>
+
+    <label for="luggageWeight">Luggage Weight (kg):</label>
+    <input type="number" id="luggageWeight" placeholder="Enter luggage weight" min="0">
+
+    <label for="isStudent">Are you a student?</label>
+    <select id="isStudent">
+      <option value="no">No</option>
+      <option value="yes">Yes</option>
+    </select>
+
+    <label for="isSenior">Are you a senior (above 60)?</label>
+    <select id="isSenior">
+      <option value="no">No</option>
+      <option value="yes">Yes</option>
+    </select>
+
+    <button onclick="calculateFlightFare()">Calculate Fare</button>
+
+    <div id="result" class="result"></div>
+
+    <script src="script.js"></script>
+  </div>
+</body>
+</html>

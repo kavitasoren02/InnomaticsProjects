@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Fitness Membership Plan</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Choose Your Fitness Plan</h2>
+
+    <label for="trainer">Do you want a personal trainer?</label>
+    <select id="trainer">
+      <option value="no">No</option>
+      <option value="yes">Yes</option>
+    </select>
+
+    <label for="dietPlan">Do you want a diet plan?</label>
+    <select id="dietPlan">
+      <option value="no">No</option>
+      <option value="yes">Yes</option>
+    </select>
+
+    <button onclick="choosePlan()">Suggest Plan</button>
+
+    <div id="result" class="result"></div>
+
+    <script src="script.js"></script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Job Application Filter</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Job Application Eligibility Checker</h2>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" placeholder="Enter your age" min="18" required>
+
+    <label for="experience">Years of Experience:</label>
+    <input type="number" id="experience" placeholder="Enter years of experience" min="0" required>
+
+    <label for="qualification">Qualification:</label>
+    <select id="qualification">
+      <option value="">Select Qualification</option>
+      <option value="Bachelor's Degree">Bachelor's Degree</option>
+      <option value="Master's Degree">Master's Degree</option>
+      <option value="Diploma">Diploma</option>
+      <option value="High School">High School</option>
+    </select>
+
+    <button onclick="checkEligibility()">Check Eligibility</button>
+
+    <div id="result" class="result"></div>
+
+    <script src="script.js"></script>
+  </div>
+</body>
+</html>

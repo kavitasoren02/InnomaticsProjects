@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Screen Traffic Light System</title>
+</head>
+<body>
+    <h1>Smart Traffic Light System </h1>
+
+    <label for="density">Select Traffic Density:</label>
+    <select id="density">
+        <option value="heavy traffic">Heavy Traffic</option>
+        <option value="moderate traffic">Moderate Traffic</option>
+        <option value="light traffic">Light Traffic</option>
+    </select>
+
+    <button onclick="display()">Green Light Duration</button>
+
+    <div id="result"></div>
+    <script src="script.js"></script>
+</body>
+</html>

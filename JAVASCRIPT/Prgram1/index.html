@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>ATM Withdrawal System</title>
+</head>
+<body>
+  <h1>ATM Withdrawal System</h1>
+
+  <label for="balance">Balance (₹):</label>
+  <input type="number" id="balance" value="5000">
+
+  <label for="amount">Withdrawal Amount (₹):</label>
+  <input type="number" id="amount">
+
+  <label for="pin">PIN:</label>
+  <input type="password" id="pin" value="1234">
+
+  <label for="enteredPin">Enter PIN:</label>
+  <input type="password" id="enteredPin">
+
+  <button onclick="processWithdrawal()">Withdraw</button>
+
+  <div id="result"></div>
+<script src="script.js"></script></body>
+</html>
