@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Shopping Cart </title>
+  </head>
+  <body>
+    <header>
+      <!-- NavBar Section -->
+      <nav class="nav-bar">
+        <h1>Get Everything</h1>
+        <div>
+          <a href="#mobiles">Mobiles</a>
+          <a href="#laptops">Laptops</a>
+          <a href="#electronics">Electronics</a>
+          <a href="#furniture">Furniture</a>
+          <a href="#devices">Devices</a>
+        </div>
+        <div class="cart-icon" onclick="toggleCart()">
+          🛒 <span id="cart-count">0</span>
+        </div>
+      </nav>
+    </header>
+
+    <section id="menu-container"></section>
+
+    <!-- Cart Section -->
+    <div id="cart-container" class="cart-hidden"></div>
+    
+    <script src="script.js"></script>
+    
+  </body>
+</html>

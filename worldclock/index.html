@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Clock</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 100vw;
+        height: 100vh;
+        background: url("https://img.freepik.com/free-photo/digital-painting-old-clock_23-2151570663.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 100px;
+      }
+
+      .timebox {
+        border: 10px solid goldenrod;
+        background-color: rgba(255, 255, 255, 0.4);
+        width: 200px;
+        height: 100px;
+        padding: 10px;
+      }
+
+      .main {
+        width: 700px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 130px;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>World Clock Center</h1>
+
+      <div class="main">
+        <div class="timebox">
+          <h1>India</h1>
+          <p id="indiantime"></p>
+        </div>
+
+        <div class="timebox">
+          <h1>Paris</h1>
+          <p id="paristime"></p>
+        </div>
+
+        <div class="timebox">
+          <h1>New York</h1>
+          <p id="newyorktime"></p>
+        </div>
+
+        <div class="timebox">
+          <h1>London</h1>
+          <p id="londontime"></p>
+        </div>
+
+      </div>
+    </div>
+    <script>
+      var indiantime = function () {
+        document.getElementById("indiantime").innerHTML =
+          new Date().toLocaleString("en-US", {
+            timeZone: "Asia/kolkata",
+            timeStyle: "long",
+            hourCycle: "h24",
+          });
+      };
+      setInterval(indiantime);
+
+      var paristime = function () {
+        document.getElementById("paristime").innerHTML =
+          new Date().toLocaleString("en-US", {
+            timeZone: "Europe/paris",
+            timeStyle: "long",
+          });
+      };
+      setInterval(paristime);
+
+      var newyorktime = function () {
+        document.getElementById("newyorktime").innerHTML =
+          new Date().toLocaleString("en-US", {
+            timeZone: "America/New_York",
+            timeStyle: "short",
+          });
+      };
+      setInterval(newyorktime);
+
+      var londontime = function () {
+        document.getElementById("londontime").innerHTML =
+          new Date().toLocaleString("en-US", {
+            timeZone: "Europe/London",
+            timeStyle: "medium",
+            hourCycle: "h24",
+          });
+      };
+      setInterval(londontime);
+    </script>
+  </body>
+</html>

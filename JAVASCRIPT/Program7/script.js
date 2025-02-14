@@ -24,7 +24,7 @@ function applyCoupon() {
         resultDiv.innerText = `Coupon Applied! Free Shipping Granted. Final Price: $${finalPrice.toFixed(2)}`;
       } else {
         resultDiv.innerText = "FREESHIP is valid only for orders above $200.";
-        resultDiv.style.color = "red";
+        resultDiv.style.color = "red"; 
       }
     } else {
       resultDiv.innerText = "Invalid coupon code.";
