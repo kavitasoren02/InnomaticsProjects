@@ -807,7 +807,7 @@ p {
 
 
 /********** Responsive CSS for Mobile Devices **********/
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 760px) {
   /* GENERAL LAYOUT ADJUSTMENTS */
   * {
     font-size: 90%; /* Slightly smaller text overall */
