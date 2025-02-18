@@ -805,21 +805,17 @@ p {
   color: white;
 }
 
-
 /********** Responsive CSS for Mobile Devices **********/
-@media only screen and (max-width: 760px) {
-  /* GENERAL LAYOUT ADJUSTMENTS */
+@media only screen and (max-width: 768px) {
+  /* GENERAL */
   * {
-    font-size: 90%; /* Slightly smaller text overall */
-  }
-  
-  html {
-    scroll-behavior: smooth;
+    font-size: 90%; /* Adjust global font size if needed */
   }
 
   /* NAVBAR & CONTACT BAR */
   .nav-bar {
     position: relative;
+    width: 100%;
   }
   .contact-bar {
     flex-direction: column;
@@ -855,14 +851,20 @@ p {
   .list a {
     font-size: 18px;
     padding: 10px;
+    text-align: center;
   }
-  
+  /* Dropdown adjustments (if needed) */
+  .dropdown-content {
+    width: 100%;
+    left: 0;
+  }
+
   /* DASHBOARD */
   .dashboard {
     height: 300px;
     background-position: center;
   }
-  
+
   /* ABOUT SECTION */
   .about {
     flex-direction: column;
@@ -877,23 +879,31 @@ p {
   .about-right h1 {
     padding-left: 0;
     text-align: center;
+    font-size: 28px;
   }
-  
-  /* FEATURED ICONS / PARENT1 CHILD ELEMENTS */
+  .about-left p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* ICON GRID (Parent1 and Child) */
   .parent1 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
+    margin: 15px;
   }
   .child {
     width: 150px;
     height: 150px;
+    margin: 10px;
   }
-  
-  /* TRENDING COURSES */
+
+  /* TRENDING COURSES SECTION */
   .section2 h1 {
     font-size: 32px;
     padding: 10px;
+    text-align: center;
   }
   .tcourses {
     flex-direction: column;
@@ -903,15 +913,27 @@ p {
   .trending {
     width: 90%;
     margin: 0 auto;
+    border-width: 1px; /* Reduce border weight if needed */
   }
-  
+  .desch,
+  .descp {
+    font-size: 16px;
+    padding: 8px;
+  }
+  .bttn {
+    margin: 10px auto;
+    width: 120px;
+    font-size: 18px;
+  }
+
   /* TRAINING SECTION */
   .maindiv {
     flex-direction: column;
     width: 90%;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     gap: 15px;
     padding: 10px;
+    font-size: 15px;
   }
   .innerdiv {
     flex-direction: column;
@@ -921,28 +943,30 @@ p {
   .imgdiv1 {
     width: 100%;
     height: 200px;
+    margin-top: 20px;
   }
   .content {
     padding: 20px;
     font-size: 18px;
   }
-  
+
   /* EXPERTS SECTION */
   .experts {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    padding: 20px;
   }
   .experts h1 {
+    font-size: 30px;
     padding-left: 0;
     text-align: center;
-    font-size: 30px;
   }
-  
-  /* SECTION6 (Carousel or Video Section) */
+
+  /* SECTION6 (Carousel/Video Section) */
   .secondheader {
     width: 90%;
-    margin-left: 5%;
+    margin: 20px auto;
     height: auto;
     padding-bottom: 20px;
   }
@@ -951,15 +975,18 @@ p {
     left: 50%;
     transform: translate(-50%, 0);
     text-align: center;
+    padding: 5px;
   }
-  
+
   /* SECTION7 (View More Button) */
   .viewmore {
     font-size: 20px;
     padding: 15px;
+    margin: 0 auto;
+    display: block;
   }
-  
-  /* SUCCESS STORIES / SECTION8 */
+
+  /* SUCCESS STORIES / PHOTOS SECTION */
   .innersuc1 {
     flex-direction: column;
     gap: 20px;
@@ -972,18 +999,22 @@ p {
     width: 80%;
     height: auto;
   }
-  
+
   /* UPDATES SECTION */
   .updates {
     flex-direction: column;
     align-items: center;
     gap: 20px;
   }
-  .oupdate, .innupdate1, .innupdate2, .innupdate3 {
+  .oupdate,
+  .innupdate1,
+  .innupdate2,
+  .innupdate3 {
     width: 90%;
     height: auto;
+    margin: 0 auto;
   }
-  
+
   /* FOOTER SECTION */
   .maindivvv {
     flex-direction: column;
@@ -996,10 +1027,19 @@ p {
   .smalldiv3 {
     width: 100%;
     height: auto;
+    margin: 0 auto;
   }
-  .spara, .ulocationlist, .icon-title, p {
+  .simg {
+    width: 60%;
+    height: auto;
+    margin: 10px auto;
+  }
+  .spara,
+  .ulocationlist,
+  .icon-title,
+  p {
     text-align: center;
-    padding-left: 0;
-    margin-left: 0;
+    padding: 0;
+    margin: 0 auto;
   }
 }
