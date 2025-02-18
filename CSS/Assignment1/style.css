@@ -350,3 +350,114 @@ button[type="submit"] {
     color: whitesmoke;
     /* background-color: rgb(133, 112, 112); */
 }
+
+
+/* Responsive Styles for Mobile Devices */
+@media screen and (max-width: 760px) {
+
+    /* NAVBAR */
+    .nav-bar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .nav-bar a {
+        font-size: 18px;
+        margin: 5px 10px;
+    }
+
+    .nav-bar input[type="search"] {
+        width: 80%;
+        margin-top: 10px;
+    }
+
+    /* DASHBOARD */
+    .dashboard {
+        height: 500px;
+        padding: 20px;
+    }
+
+    .welcome {
+        font-size: 35px;
+    }
+
+    .para {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    #btn {
+        padding: 15px;
+    }
+
+    #btn a {
+        font-size: 18px;
+    }
+
+    /* MENU */
+    .vmenu {
+        height: auto;
+        padding: 20px;
+    }
+
+    .card-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    /* ABOUT US */
+    .aboutus {
+        height: auto;
+        padding: 20px;
+    }
+
+    .main-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-container .left {
+        padding-top: 20px;
+        font-size: 18px;
+        padding-right: 0;
+    }
+
+    .main-container .right {
+        width: 100%;
+        height: 250px;
+        background-size: contain;
+        background-position: center;
+    }
+
+    /* CONTACT */
+    .contact-menu {
+        width: 90%;
+        padding: 20px;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+        width: 95%;
+    }
+
+    button[type="submit"] {
+        width: 90%;
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    /* FOOTER */
+    .footer {
+        font-size: 14px;
+        padding: 10px;
+        text-align: center;
+    }
+}
