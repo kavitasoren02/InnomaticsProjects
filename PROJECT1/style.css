@@ -804,23 +804,26 @@ p {
 .copyright p{
   color: white;
 }
-
-/********** Responsive CSS for Mobile Devices **********/
+/********** Responsive CSS for Mobile Devices (max-width: 768px) **********/
 @media only screen and (max-width: 768px) {
-  /* GENERAL */
+  /* GENERAL ADJUSTMENTS */
   * {
-    font-size: 90%; /* Adjust global font size if needed */
+    font-size: 90%; /* Adjust overall font size if needed */
+  }
+  html {
+    scroll-behavior: smooth;
   }
 
   /* NAVBAR & CONTACT BAR */
   .nav-bar {
-    position: relative;
     width: 100%;
+    position: relative; /* Remove sticky if necessary */
   }
   .contact-bar {
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 8px;
-    text-align: center;
   }
   .enquiry {
     font-size: 18px;
@@ -835,6 +838,10 @@ p {
   .location {
     font-size: 15px;
     padding: 5px;
+    width: auto;
+  }
+  .location a {
+    font-size: 14px;
   }
 
   /* NAVIGATION LIST */
@@ -842,9 +849,11 @@ p {
     flex-direction: column;
     height: auto;
     align-items: center;
+    padding: 5px 0;
   }
   .list {
     flex-direction: column;
+    align-items: center;
     padding-right: 0;
     gap: 0.5rem;
   }
@@ -852,8 +861,8 @@ p {
     font-size: 18px;
     padding: 10px;
     text-align: center;
+    width: 100%;
   }
-  /* Dropdown adjustments (if needed) */
   .dropdown-content {
     width: 100%;
     left: 0;
@@ -863,13 +872,15 @@ p {
   .dashboard {
     height: 300px;
     background-position: center;
+    width: 100%;
   }
 
   /* ABOUT SECTION */
   .about {
     flex-direction: column;
     gap: 20px;
-    padding: 0 20px;
+    padding: 0 10px;
+    width: 100%;
   }
   .about-left,
   .about-right {
@@ -877,8 +888,8 @@ p {
     padding: 10px;
   }
   .about-right h1 {
-    padding-left: 0;
     text-align: center;
+    padding-left: 0;
     font-size: 28px;
   }
   .about-left p {
@@ -886,12 +897,13 @@ p {
     line-height: 1.5;
   }
 
-  /* ICON GRID (Parent1 and Child) */
+  /* ICON GRID (parent1 & child) */
   .parent1 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
-    margin: 15px;
+    margin: 15px auto;
+    width: 100%;
   }
   .child {
     width: 150px;
@@ -900,6 +912,10 @@ p {
   }
 
   /* TRENDING COURSES SECTION */
+  .section2 {
+    height: auto;
+    padding-bottom: 20px;
+  }
   .section2 h1 {
     font-size: 32px;
     padding: 10px;
@@ -909,36 +925,72 @@ p {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    width: 100%;
   }
   .trending {
     width: 90%;
-    margin: 0 auto;
-    border-width: 1px; /* Reduce border weight if needed */
+    margin: 20px auto;
+    height: auto;  /* Let content adjust height */
+    border-width: 1px;
   }
   .desch,
   .descp {
     font-size: 16px;
     padding: 8px;
+    text-align: center;
   }
   .bttn {
     margin: 10px auto;
     width: 120px;
     font-size: 18px;
+    display: block;
+  }
+
+  /* ADVANTAGES & VIDEO SECTION */
+  .details {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+  }
+  .advantages {
+    padding: 25px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .video {
+    padding: 25px;
+    text-align: center;
+  }
+  .video a {
+    margin: 20px auto;
+  }
+  .morevideos {
+    font-size: 18px;
+    padding: 15px;
+    width: 80%;
+    margin: 0 auto;
   }
 
   /* TRAINING SECTION */
   .maindiv {
-    flex-direction: column;
     width: 90%;
-    margin: 0 auto 20px;
+    margin: 20px auto;
+    flex-direction: column;
     gap: 15px;
     padding: 10px;
     font-size: 15px;
+  }
+  .childdiv {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
   }
   .innerdiv {
     flex-direction: column;
     padding: 20px;
     height: auto;
+    width: 100%;
   }
   .imgdiv1 {
     width: 100%;
@@ -946,8 +998,10 @@ p {
     margin-top: 20px;
   }
   .content {
+    width: 100%;
     padding: 20px;
     font-size: 18px;
+    text-align: center;
   }
 
   /* EXPERTS SECTION */
@@ -959,11 +1013,15 @@ p {
   }
   .experts h1 {
     font-size: 30px;
-    padding-left: 0;
     text-align: center;
+    padding: 0;
+  }
+  .location1 {
+    font-size: 18px;
+    padding: 10px;
   }
 
-  /* SECTION6 (Carousel/Video Section) */
+  /* SECTION6 (Carousel / Video Section) */
   .secondheader {
     width: 90%;
     margin: 20px auto;
@@ -979,6 +1037,11 @@ p {
   }
 
   /* SECTION7 (View More Button) */
+  .thirddiv {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
   .viewmore {
     font-size: 20px;
     padding: 15px;
@@ -986,11 +1049,14 @@ p {
     display: block;
   }
 
-  /* SUCCESS STORIES / PHOTOS SECTION */
+  /* SECTION8 (Success Stories / Photos) */
+  .section7 {
+    padding: 20px 10px;
+  }
   .innersuc1 {
     flex-direction: column;
-    gap: 20px;
     align-items: center;
+    gap: 20px;
   }
   .photoimg1,
   .photoimg2,
@@ -998,10 +1064,11 @@ p {
   .photoimg4 {
     width: 80%;
     height: auto;
+    margin: 0 auto;
   }
 
   /* UPDATES SECTION */
-  .updates {
+  .section8 .updates {
     flex-direction: column;
     align-items: center;
     gap: 20px;
@@ -1013,6 +1080,10 @@ p {
     width: 90%;
     height: auto;
     margin: 0 auto;
+  }
+  .indetails {
+    text-align: center;
+    padding-top: 20px;
   }
 
   /* FOOTER SECTION */
@@ -1041,5 +1112,14 @@ p {
     text-align: center;
     padding: 0;
     margin: 0 auto;
+  }
+  .scourse,
+  .unorder {
+    text-align: center;
+    padding-left: 0;
+  }
+  .copyright {
+    font-size: 16px;
+    padding: 10px;
   }
 }
