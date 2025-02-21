@@ -102,3 +102,33 @@ button:hover {
 #restart-btn:hover {
     background-color: #d32f2f;
 }
+
+/*for mobile-device*/
+@media (max-width: 600px) {
+    #game-board {
+        grid-template-columns: repeat(4, 70px);
+        grid-template-rows: repeat(4, 70px);
+        grid-gap: 5px;
+        max-width: 310px;
+    }
+
+    .card {
+        width: 70px;
+        height: 70px;
+    }
+
+    .card-back {
+        font-size: 18px;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    #header {
+        flex-direction: column;
+        text-align: center;
+        font-size: 16px;
+    }
+}
