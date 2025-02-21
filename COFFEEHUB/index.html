@@ -1,14 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" href="Images/coffee.ico" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="Images/coffee.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Coffee_hub</title>
-</head>
-<body>
-    
+  </head>
+  <body>
+    <div class="main-container">
+      <h1>
+        BrewHub-<i>Crafted to love, Brewed to perfection-Served with passion</i>
+      </h1>
+      <div class="card-container">
+        <div class="card gold-card" id="goldCard" onclick="selectedCustomerType('gold')">Gold Member</div>
+        <div class="card silver-card" id="silverCard" onclick="selectedCustomerType('silver')">Silver Member</div>
+        <div class="card regular-card" id="regularCard" onclick="selectedCustomerType('regular')">Regular Member</div>
+      </div>
+      
+      <!-- select coffee type -->
+      <div id="options" class="options-container">
+        <label for="coffeeType">Select Coffee Type:</label>
+        <select id="coffeeType" class="select-option">
+          <option value="latte">Latte</option>
+          <option value="espresso">Espresso</option>
+          <option value="mocha">Mocha</option>
+        </select>
+
+        <!-- select coffee size -->
+        <label for="coffeeSize">Select Coffee Size:</label>
+        <select id="coffeeSize" class="select-option">
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+
+        <!-- coffee quantity -->
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" min="1" value="1" class="input">
+
+        <!-- add-on section -->
+        <label for="addons">Add-ons:</label>
+        <div class="addons-checkbox">
+          <input type="checkbox" id="whippedCream"> Whipped Cream ($0.5)
+        </div>
+        <div class="addons-checkbox">
+          <input type="checkbox" id="extraShot"> Extra Shot ($1)
+        </div>
+        <div class="addons-checkbox">
+          <input type="checkbox" id="syrup"> Syrup ($0.7)
+        </div>
+
+        <!-- promo code -->
+        <label for="promoCode">Promo Code:</label>
+        <input type="text" id="promoCode" class="input" placeholder="Enter Promocode">
+
+        <button onclick="calculateTotal()">Calculate Total</button>
+      </div>
+
+      <!-- result container -->
+      <div class="result-container" id="result" style="display: none;">
+        <h2>Order Summary</h2>
+        <p id="summaryCoffee"></p>
+        <p id="summaryQuantity"></p>
+        <p id="summaryAddons"></p>
+        <p>Subtotal: $ <span id="subtotal"></span></p>
+        <p>Discount: $ <span id="discount"></span></p>
+        <p>Tax: $ <span id="tax"></span></p>
+        <p>Total: $ <span id="total"></span></p>
+        <button onclick="printInvoice()" class="print-button">Print Invoice</button>
+      </div>
+    </div>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
