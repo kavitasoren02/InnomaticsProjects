@@ -90,7 +90,7 @@ export default class Quotegen extends Component {
 
 const styles = {
     container: {
-      height: "100vh",
+      height: "100dvh",
       width: "100vw",
       backgroundSize: "cover",
       backgroundPosition: "center",
