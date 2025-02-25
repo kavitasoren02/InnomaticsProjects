@@ -1,0 +1,94 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #39313f;
+  color: beige; 
+}
+
+.todo .heading {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.todo .lists {
+  width: 500px;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+}
+
+.todo .lists .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid white;
+  padding: 10px;
+  background-color: rgb(119, 123, 130);
+  border-radius: 6px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+/* Styling for completed tasks */
+.todo .lists .item.completed {
+  background-color: #4b4b4b; /* Darker background */
+}
+
+.todo .lists .item.completed p {
+  text-decoration: line-through;
+  color: lightgray;
+}
+
+.todo .lists .item .buttons {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.todo .lists .item .buttons button {
+  padding: 5px 20px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+}
+
+.todo .addItem {
+  width: 500px;
+  margin: 30px auto;
+}
+
+.todo .addItem input {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  outline: none;
+}
+.todo .lists .item.completed p {
+  text-decoration: line-through;
+  color: lightgray;
+}
+
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .todo .lists,
+  .todo .addItem {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .todo .lists .item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .todo .lists .item .buttons {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
