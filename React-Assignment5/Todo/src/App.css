@@ -96,6 +96,7 @@ body {
     width: 100%;
     justify-content: space-between;
   }
-  .addItem{margin-top: 10px ;
+  .addItem{
+    margin-top: 15px ;
   }
 }
