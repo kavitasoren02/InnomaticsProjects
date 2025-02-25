@@ -79,12 +79,14 @@ body {
   .todo .addItem {
     width: 90%;
     /* margin: 0 auto; */
+    margin-top: 15px ;
   }
 
   .todo .lists .item {
     flex-direction: column;
     align-items: flex-start;
     padding: 12px;
+    margin-top: 10px;
   }
 
   .todo .lists .item p {
@@ -97,6 +99,5 @@ body {
     justify-content: space-between;
   }
   .addItem{
-    margin-top: 15px ;
   }
 }
