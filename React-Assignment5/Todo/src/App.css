@@ -77,9 +77,9 @@ body {
 @media (max-width: 600px) {
   .todo .lists,
   .todo .addItem {
-    margin-top: 10px;
     width: 90%;
-    margin: 0 auto;
+    margin-top: 10px;
+    /* margin: 0 auto; */
   }
 
   .todo .lists .item {
