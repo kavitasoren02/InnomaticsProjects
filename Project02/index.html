@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="shortcut icon" href="Images/gameimg.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="Images/gameimg.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Match Game</title>
-  </head>
-  <body>
+</head>
+<body>
     <div id="landing-page">
         <h1>Memory Match Game</h1>
-        <button onclick="startGame('animals')">Animals</button>
+        <button onclick="startGame('animals')">🐶 Animals</button>
+        <button onclick="startGame('fruits')">🍎 Fruits</button>
+        <button onclick="startGame('shapes')">🔷 Shapes</button>
+        <button onclick="startGame('emojis')">😀 Emojis</button>        
     </div>
 
     <div id="game-container" class="hidden">
@@ -21,6 +24,7 @@
         <div id="game-board"></div>
         <button id="restart-btn" onclick="restartGame()">Restart</button>
     </div>
+
     <script src="script.js"></script>
-  </body>
+</body>
 </html>

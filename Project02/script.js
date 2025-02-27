@@ -1,107 +1,118 @@
+const gameBoard = document.getElementById("game-board");
+const timerElement = document.getElementById("timer");
+const scoreElement = document.getElementById("score");
+
+let cards = [];
+let flippedCards = [];
+let score = 0;
 let timer;
-        let score = 0;
-        let selectedCategory = "";
-        let flippedCards = [];
+let timeLeft;
 
-        const categories = {
-            animals: ["🐶", "🐱", "🐭", "🐰", "🐼", "🐷", "🐵", "🐧"]
-        };
+const categories = {
+    animals: ["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼"],
+    fruits: ["🍎", "🍌", "🍇", "🍉", "🍓", "🍒", "🥭", "🍍"],
+    emojis: ["😀", "😂", "😎", "😡", "😍", "🤯", "🥶", "🤩"],
+    shapes: ["🔷", "⬛", "🔺", "⭐", "⚪", "🔶", "⬜", "🟠"]
+};
 
-        function startGame(category) {
-            selectedCategory = category;
-            document.getElementById("landing-page").classList.add("hidden");
-            document.getElementById("game-container").classList.remove("hidden");
-            initializeGame();
+// Function to start the game
+function startGame(category) {
+    document.getElementById("landing-page").classList.add("hidden");
+    document.getElementById("game-container").classList.remove("hidden");
+
+    score = 0;
+    scoreElement.textContent = score;
+
+    createBoard(category);
+    startTimer(); // Start the timer
+}
+
+// Function to create the game board
+function createBoard(category) {
+    const selectedEmojis = categories[category];
+    cards = [...selectedEmojis, ...selectedEmojis]; // Duplicate for pairs
+    cards.sort(() => Math.random() - 0.5); // Shuffle cards
+
+    gameBoard.innerHTML = ""; // Clear previous game board
+
+    cards.forEach((emoji) => {
+        const card = document.createElement("div");
+        card.classList.add("card");
+
+        const cardInner = document.createElement("div");
+        cardInner.classList.add("card-inner");
+
+        const cardFront = document.createElement("div");
+        cardFront.classList.add("card-front");
+
+        const cardBack = document.createElement("div");
+        cardBack.classList.add("card-back");
+        cardBack.textContent = emoji;
+
+        cardInner.appendChild(cardFront);
+        cardInner.appendChild(cardBack);
+        card.appendChild(cardInner);
+
+        card.addEventListener("click", () => flipCard(card));
+
+        gameBoard.appendChild(card);
+    });
+}
+
+// Function to flip a card
+function flipCard(card) {
+    if (flippedCards.length < 2 && !card.classList.contains("flipped")) {
+        card.classList.add("flipped");
+        flippedCards.push(card);
+
+        if (flippedCards.length === 2) {
+            setTimeout(checkMatch, 500);
         }
+    }
+}
 
-        function initializeGame() {
-            const board = document.getElementById("game-board");
-            board.innerHTML = "";
-            score = 0;
-            document.getElementById("score").textContent = score;
-            flippedCards = []; // Clear flipped cards
+// Function to check if two flipped cards match
+function checkMatch() {
+    const [card1, card2] = flippedCards;
+    if (card1.innerHTML === card2.innerHTML) {
+        card1.classList.add("matched");
+        card2.classList.add("matched");
+        score += 10;
+        scoreElement.textContent = score;
+    } else {
+        card1.classList.remove("flipped");
+        card2.classList.remove("flipped");
+    }
+    flippedCards = [];
 
-            let items = categories[selectedCategory];
-            items = [...items, ...items].sort(() => Math.random() - 0.5);
-            items = items.slice(0, 16); // Take only the first 16
+    if (document.querySelectorAll(".matched").length === cards.length) {
+        clearInterval(timer);
+        alert("🎉 You won! Score: " + score);
+    }
+}
 
-            items.forEach((item) => {
-                const card = document.createElement("div");
-                card.classList.add("card");
-                card.dataset.value = item;
+// Function to start the timer
+function startTimer() {
+    timeLeft = 30;
+    timerElement.textContent = timeLeft;
 
-                const cardFront = document.createElement("div");
-                cardFront.classList.add("card-front");
+    timer = setInterval(() => {
+        timeLeft--;
+        timerElement.textContent = timeLeft;
 
-                const cardBack = document.createElement("div");
-                cardBack.classList.add("card-back");
-                cardBack.textContent = item;
-
-                card.appendChild(cardFront);
-                card.appendChild(cardBack);
-
-                card.onclick = () => flipCard(card);
-                board.appendChild(card);
-            });
-
-            startTimer();
-        }
-
-        function flipCard(card) {
-            if (flippedCards.length < 2 && !card.classList.contains("matched") && !card.classList.contains("flipped")) {
-                card.classList.toggle("flipped");
-
-                if (flippedCards.length === 0) {
-                    flippedCards.push(card);
-                } else if (flippedCards.length === 1 && flippedCards[0] !== card) {
-                    flippedCards.push(card);
-                    setTimeout(checkMatch, 1000);
-                }
-            }
-        }
-
-        function checkMatch() {
-            const [card1, card2] = flippedCards;
-            const value1 = card1.querySelector('.card-back').textContent;
-            const value2 = card2.querySelector('.card-back').textContent;
-
-            if (value1 === value2) {
-                card1.classList.add("matched");
-                card2.classList.add("matched");
-                score += 10;
-                document.getElementById("score").textContent = score;
-            } else {
-                setTimeout(() => {
-                    card1.classList.remove("flipped");
-                    card2.classList.remove("flipped");
-                }, 500);
-            }
-            flippedCards = [];
-
-            const matchedCards = document.querySelectorAll('.matched');
-            if (matchedCards.length === document.querySelectorAll('.card').length) {
-                clearInterval(timer);
-                alert("Game Over! Your Score: " + score);
-                restartGame();
-            }
-        }
-
-        function startTimer() {
-            let timeLeft = 30;
-            document.getElementById("timer").textContent = timeLeft;
-            timer = setInterval(() => {
-                timeLeft--;
-                document.getElementById("timer").textContent = timeLeft;
-                if (timeLeft === 0) {
-                    clearInterval(timer);
-                    alert("Game Over! Your Score: " + score);
-                    restartGame();
-                }
-            }, 1000);
-        }
-
-        function restartGame() {
+        if (timeLeft === 0) {
             clearInterval(timer);
-            document.getElementById("landing-page").classList.remove("hidden");
-            document.getElementById("game-container").classList.add("hidden");
+            alert("⏳ Time's up! Your Score: " + score);
+            restartGame();
         }
+    }, 1000);
+}
+
+// Function to restart the game
+function restartGame() {
+    clearInterval(timer); // Stop the timer
+    flippedCards = []; // Clear flipped cards
+
+    document.getElementById("game-container").classList.add("hidden");
+    document.getElementById("landing-page").classList.remove("hidden");
+}
