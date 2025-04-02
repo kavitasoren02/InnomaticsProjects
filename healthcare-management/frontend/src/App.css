@@ -1,0 +1,6 @@
+body {
+    overflow: hidden;
+  }
+  button{
+    cursor: pointer !important;
+  }
